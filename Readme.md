@@ -15,3 +15,5 @@ go test ./...
 ### To run specific folder level test case
 
 go test ./folder-name
+
+### To run the tests in verbose mode, add the `-v` to the command.
