@@ -27,3 +27,14 @@ func shortHandVariables() (returnValue string) {
 	returnValue = fmt.Sprintf("%s %d %s", messageStart, age, messageEnd)
 	return returnValue
 }
+
+func sameLineDeclaration() {
+	averageOpenRate, displayMessage := 0.23, "is the average open rate of your message"
+	fmt.Println(averageOpenRate, displayMessage)
+}
+
+func convertions() float64 {
+	temperatureInt := 88
+	temperatureFloat := float64(temperatureInt)
+	return temperatureFloat
+}

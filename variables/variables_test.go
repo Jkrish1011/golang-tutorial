@@ -13,3 +13,16 @@ func TestShortHandVariables(t *testing.T) {
 		t.Errorf("Error: Did not get the expected answer!")
 	}
 }
+
+func TestSameLineDeclaration(t *testing.T) {
+	sameLineDeclaration()
+	t.Logf("sameLineDeclarationTest passed!")
+}
+
+func TestConversions(t *testing.T) {
+	float64Variable := convertions()
+	if float64Variable != 88.0 {
+		t.Errorf("Error: Did not pass")
+	}
+	t.Logf("sameLineDeclarationTest passed!")
+}
