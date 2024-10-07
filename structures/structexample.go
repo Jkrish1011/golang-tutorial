@@ -1,5 +1,7 @@
 package structures
 
+import "fmt"
+
 type car struct {
 	model      string
 	make       int
@@ -26,5 +28,10 @@ func carStruct() car {
 			material: "steel",
 		},
 	}
+
+	// we can initialize an empty structure as well
+	car2 := car{}
+	fmt.Printf("%+v", car2)
+	// We can define the keys later on as well.
 	return car1
 }
