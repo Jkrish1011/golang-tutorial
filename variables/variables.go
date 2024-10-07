@@ -24,6 +24,7 @@ func shortHandVariables() (returnValue string) {
 	age := 21
 	messageEnd := "years old!"
 	fmt.Println(messageStart, age, messageEnd)
+	// Sprintf returns the value of the formatted string
 	returnValue = fmt.Sprintf("%s %d %s", messageStart, age, messageEnd)
 	return returnValue
 }
@@ -37,4 +38,10 @@ func convertions() float64 {
 	temperatureInt := 88
 	temperatureFloat := float64(temperatureInt)
 	return temperatureFloat
+}
+
+func constants() {
+	// Constants must be known at compile time
+	const premiumPlanName = "Premium Plan"
+	const basicPlanName string = "Basic Plan"
 }

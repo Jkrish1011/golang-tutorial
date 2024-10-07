@@ -26,3 +26,7 @@ func TestConversions(t *testing.T) {
 	}
 	t.Logf("sameLineDeclarationTest passed!")
 }
+
+func TestConstants(t *testing.T) {
+	constants()
+}
