@@ -12,3 +12,23 @@ func printNumericValue(num interface{}) {
 		fmt.Printf("%T\n", v)
 	}
 }
+
+type cost struct {
+	toAddress string
+	cost      int
+}
+
+type sms struct {
+	toPhoneNumber int
+	cost          int
+}
+
+// Assume expense interface is implemented on cost and sms
+// func sample(e expense) {
+// switch v:= e.(type) {
+// case cost:
+// 	return v.toAddress
+// case sms:
+// 	return v.toPhoneNumber
+// }
+// }
