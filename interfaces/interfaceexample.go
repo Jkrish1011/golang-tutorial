@@ -9,6 +9,7 @@ import (
 Info:
 Interfaces are just collections of method signatures.
 A type "implements" an interface if it has methods that match the interface's method signatures.
+you don't need to explicitly mention that a struct implements it, rather the go compiler infers that information own it's own.
 
 Question:
 
