@@ -33,6 +33,26 @@ by the costMultiplier.
 There is a bug in the code! Add a condition to the for loop to fix the bug. The loop should stop when balance is equal to
 or less than 0.
 
+Continue keyword:
+The continue keyword stops the current iteration of a loop and continues to the next iteration. contineu is a powerful way to use the
+"guard clause" pattern within loops.
+example/
+for i := 0; i < 10; i++ {
+	if i % 2 == 0 {
+		continue
+	}
+	fmt.Println(i)
+}
+
+Break Keyword:
+the break keyword stop the current iteration of a loop and exists the loop
+
+for i := 0; i < 10; i++ {
+	if i == 6 {
+		break
+	}
+	fmt.Println(i)
+}
 */
 
 func getMaxMessagesToSend(costMultiplier float64, maxCostInPennies int) int {
