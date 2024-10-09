@@ -3,7 +3,7 @@ package slices
 import "testing"
 
 func TestSlices(t *testing.T) {
-	planName := "pro1"
+	planName := "pro"
 	messages := [3]string{
 		"first",
 		"second",
