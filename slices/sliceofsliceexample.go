@@ -28,6 +28,14 @@ For example, a 10x10 matrix would look like this:
 [0  7 14 21 28 35 42 49 56 63]
 [0  8 16 24 32 40 48 56 64 72]
 [0  9 18 27 36 45 54 63 72 81]
+
+NOTE:
+
+The append() function changes the underlying array of its parameter AND returns a new slice. This means that using append() on anything other
+than itself is usually a BAD idea.
+
+// dont do this!
+someSlice = append(otherSlice, element)
 */
 func createMatrix(rows, cols int) [][]int {
 	matrix := make([][]int, 0)
