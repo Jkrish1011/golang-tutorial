@@ -31,6 +31,7 @@ import (
 func sendEmail(message string) {
 	// Adding go here would spawn a new gorountine and it will be executed separately. thus Email send will be printed first and then this
 	// function because it has a sleep timer inside it(for the purpose of the assignment)
+	// Here this is a anonymous function and we are declaring and executing it then and here!
 	go func() {
 		time.Sleep(time.Millisecond * 250)
 		fmt.Printf("Email received: '%s'\n", message)
