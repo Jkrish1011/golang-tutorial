@@ -50,6 +50,22 @@ The sendIsOld function is trying to send on a channel, but no other goroutines a
 channel.
 
 Fix the deadlock by spawning a goroutine to send the "is old" values.
+
+Closing go channel:
+-------------------
+Channels can be explicitly close by the sender
+
+```
+close(ch)
+```
+
+Check if channel is close is similar to checking value exists in maps.
+
+```
+ch, ok := <-ch
+```
+
+ok is `false`, channel is empty and closed.
 */
 import (
 	"time"
@@ -83,3 +99,5 @@ func sendIsOld(isOldChan chan<- bool, emails [3]email) {
 		isOldChan <- false
 	}
 }
+
+// Assignment 2
