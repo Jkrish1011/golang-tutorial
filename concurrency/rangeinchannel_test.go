@@ -52,3 +52,21 @@ Test Passed:
 	fmt.Println("---------------------------------")
 	fmt.Printf("%d passed, %d failed\n", passCount, failCount)
 }
+
+func TestBaristaExample(t *testing.T) {
+	numberOfOrders := 5
+	orderChan := make(chan string, numberOfOrders)
+
+	go func() {
+		for idxOrder := 0; idxOrder < numberOfOrders; idxOrder++ {
+			order := fmt.Sprintf("Coffee Order #%d", idxOrder)
+			orderChan <- order
+			fmt.Println("Order Placed : ", order)
+		}
+		close(orderChan)
+	}()
+
+	// go baristaExample(orderChan) - if you do this, then the order's won't be served because the main goroutine would finish compiling and
+	// won't be around to read from the channel.
+	baristaExample(orderChan)
+}

@@ -1,5 +1,10 @@
 package concurrency
 
+import (
+	"fmt"
+	"time"
+)
+
 /*
 We can iterate over the channels using for loop and it will block and wait to receive an item.
 
@@ -46,4 +51,14 @@ func fibonacci(n int, ch chan int) {
 		x, y = y, x+y
 	}
 	close(ch)
+}
+
+// Example Barista Coffee example
+
+func baristaExample(orderChan chan string) {
+	for order := range orderChan {
+		fmt.Printf("Preparing %s \n", order)
+		time.Sleep(2 * time.Second)
+		fmt.Printf("Served %s \n", order)
+	}
 }
