@@ -1,6 +1,6 @@
 # GoLang Tutorial
 
-This project is a set of code which is used to understand golang and it's working.
+This project is a set of code which is used to understand golang and it's working while doing the golang course from freecodecamp and boot.dev.
 
 ## Run test case
 
