@@ -1,6 +1,7 @@
 package concurrency
 
 /*
+
 Channels
 --------
 The way we can declare new goroutines and allow them to compute some tasks and share the computated data back.
@@ -38,6 +39,34 @@ The operation blocks until there is a value from the channel to be received.
 Deadlock
 --------
 A deadlock is when a group of goroutines are blocking and none of them are able to continue execution.
+
+Read-Only Channels:
+-------------------
+A channel can be marked as read-only by casting it from a `chan` to a <- chan type. For Example.
+
+```
+func main() {
+	ch := make(chan int)
+	readCh(ch)
+}
+
+func readCh(ch <-chan int) {
+	// ch can only be read from in this function
+	...
+}
+
+```
+
+Write-Only Channels:
+-------------------
+Everything remains the same. Just that the arrow position moves in the opposite direction.
+
+```
+func writeCh(ch chan<- int) {
+	// ch can only be written to in this function
+	...
+}
+```
 
 */
 
