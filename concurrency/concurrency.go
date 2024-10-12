@@ -46,3 +46,9 @@ func test(message string) {
 	time.Sleep(time.Millisecond * 500)
 	fmt.Println("========================")
 }
+
+func sampleFunctionForConcurrency(target string, ch chan bool) {
+	time.Sleep(time.Second)
+	fmt.Printf("The target is : %s\n", target)
+	ch <- true
+}
