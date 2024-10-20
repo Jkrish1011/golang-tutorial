@@ -27,30 +27,30 @@ type ListNode1 struct {
 
 func removeNthFromEnd(head *ListNode1, n int) *ListNode1 {
 	currNode := head
-	prevNode := &ListNode1{Val: -1, Next: nil}
-	// retVal := &ListNode1{Val: -1, Next: nil}
-	// nextNode := currNode.Next
-	counter := 0
+	lengthOfLinkedList := 0
 	/*
-		define a function to recursively iterate through the linkedlist using 3 pointers.
-		Once we reach the end, we count back the n steps required.
-		do prev->next = curr->next
-		break
-	*/
-	var dp func(prevNode *ListNode1, currNode *ListNode1) (*ListNode1, *ListNode1)
-	dp = func(prevNode *ListNode1, currNode *ListNode1) (*ListNode1, *ListNode1) {
-		if currNode == nil {
-			return nil, nil
-		}
+		Iterate through the linkedlist to find the length.
+		do length - n(nth node from last.)
+		Iterate again to reach the (len - n)th node.
+		from that node,
+			do node.next = node.next.next (this will be as if the next node is not part of the linked list!)
 
-		prevNode, currNode = dp(currNode, currNode.Next)
-		counter += 1
-		if counter == n {
-			prevNode.Next = currNode.Next
-		}
-		return prevNode, currNode.Next
+	*/
+	for currNode != nil {
+		currNode = currNode.Next
+		lengthOfLinkedList += 1
 	}
 
-	prevNode, currNode = dp(prevNode, currNode)
-	return currNode
+	if lengthOfLinkedList == n {
+		return head.Next
+	}
+
+	currNode = head
+	for idx := 0; idx < (lengthOfLinkedList - n - 1); idx++ {
+		currNode = currNode.Next
+	}
+
+	currNode.Next = currNode.Next.Next
+
+	return head
 }
